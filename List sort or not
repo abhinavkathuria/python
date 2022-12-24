@@ -1,0 +1,23 @@
+lst1=[]
+lst1 = [int(item) for item in input("Enter the list items : ").split()]
+sortedlist=lst1.copy()
+sortedlist.sort()
+reverselist=sortedlist.copy()
+reverselist.reverse()
+flag=0
+same=1
+for i in range(len(lst1)):
+    j=i
+    if lst1[i]==sortedlist[i]:
+        flag+=1
+        
+    if lst1[i]==reverselist[i]:
+        flag-=1
+for i in range(len(lst1)):
+    if i==len(lst1)-1: break
+    if lst1[i]==lst1[i+1] : same+=1
+        
+if flag==len(lst1): print ("List is Sorted")
+elif flag==len(lst1)*-1: print ("List is reverse sorted")
+elif same==len(lst1):print ("All elements of the list are same")
+else: print("list has no order")
